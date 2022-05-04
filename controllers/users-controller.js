@@ -74,3 +74,19 @@ exports.signupPost = [
     });
   },
 ];
+
+exports.loginGet = (req, res, next) => {
+  if (req.user) return res.redirect('/');
+  if (req.session.messages) {
+    return res.render('login-form', {
+      error: req.session.messages[req.session.messages.length - 1], // get latest message
+    });
+  }
+  return res.render('login-form');
+};
+
+exports.loginPost = passport.authenticate('local', {
+  successRedirect: '/',
+  failureRedirect: '/users/login',
+  failureMessage: true,
+});
