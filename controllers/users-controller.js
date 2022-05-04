@@ -1,8 +1,10 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcryptjs');
+const async = require('async');
 const { body, validationResult } = require('express-validator');
 const User = require('../models/user');
+const Message = require('../models/message');
 
 passport.use(
   new LocalStrategy((username, password, done) => {
@@ -94,4 +96,25 @@ exports.loginPost = passport.authenticate('local', {
 exports.logout = (req, res, next) => {
   req.logout();
   res.redirect('/');
+};
+
+exports.userDetail = (req, res, next) => {
+  async.parallel(
+    {
+      user: (callback) => {
+        User.findById(req.params.id).exec(callback);
+      },
+      userMessages: (callback) => {
+        Message.find({ author: req.params.id }).exec(callback);
+      },
+    },
+    (err, result) => {
+      if (err) return next(err);
+      return res.render('user-detail', {
+        title: `${result.user.username}`,
+        user: result.user,
+        userMessages: result.userMessages,
+      });
+    },
+  );
 };
