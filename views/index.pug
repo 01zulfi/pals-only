@@ -6,6 +6,8 @@ block content
       h1 Welcome #{currentUser.username}
       a(href="/") Home
       p
+      a(href=`/users/${currentUser.id}`) Profile
+      p
       a(href="/users/logout") Logout
     else 
       h1 Hello
