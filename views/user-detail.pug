@@ -1,18 +1,21 @@
 extends layout 
 
 block content 
-  h1= title
-  h2 #{user.firstName} #{user.lastName}
-  section   
-    h3 Messages
-    if userMessages.length > 0
-      div 
-        each message in userMessages
-          h4= message.title
-          p= message.body
-    else 
-      div 
-        if currentUser
-          p You have no messages.
-        else 
-          p #{user.username} has no messages.
+  if currentUser
+    h1= title
+    h2 #{user.firstName} #{user.lastName}
+    section   
+      h3 Messages
+      if userMessages.length > 0
+        div 
+          each message in userMessages
+            h4= message.title
+            p= message.body
+      else 
+        div 
+          if currentUser
+            p You have no messages.
+          else 
+            p #{user.username} has no messages.
+  else 
+    h3 You can not view user profiles. Insufficient permissions. 
