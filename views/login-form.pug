@@ -1,0 +1,15 @@
+extends layout 
+
+block content 
+  h1 Login 
+  form(action="", method="post") 
+    div 
+      label(for="username") Username:
+      input(type="text" name="username" id="username" autocomplete="username" placeholder="Enter username here..." required)
+    div 
+      label(for="current-password") Password:
+      input(type="password" autocomplete="current-password" name="password" id="current-password" require)
+    if error
+      div 
+          p= error
+    button(type="submit") Login
