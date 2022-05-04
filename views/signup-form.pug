@@ -1,0 +1,25 @@
+extends layout 
+
+block content 
+  h1 Sign Up!
+  form(action="", method="post") 
+    div   
+      label(for="username") Username:
+      input(type="text" name="username" id="username" required placeholder="Enter username here..." value=(username || ''))
+    div   
+      label(for="first-name") First Name:
+      input(type="text" name="firstName" id="first-name" placeholder="Enter first name here..." value=(firstName || ''))
+    div   
+      label(for="last-name") Last Name:
+      input(type="text" name="lastName" id="last-name" placeholder="Enter last name here..." value=(lastName || ''))
+    div 
+      label(for="password") Password:
+      input(type="password" name="password" id="password" required)
+    div 
+      label(for="confirm-password") Confirm Password:
+      input(type="password" id="confirm-password" required name="confirmPassword")
+    if errors
+      div
+       each error in errors
+        p= error.msg
+    button(type="submit") Submit 
