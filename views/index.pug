@@ -1,5 +1,16 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div 
+    if currentUser
+      h1 Welcome #{currentUser.username}
+      a(href="/") Home
+      p
+      a(href="/users/logout") Logout
+    else 
+      h1 Hello
+      a(href="/") Home
+      p 
+      a(href="/users/login") Login
+      p
+      a(href="/users/signup") Sign Up
