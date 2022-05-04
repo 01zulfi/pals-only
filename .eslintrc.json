@@ -1,0 +1,19 @@
+{
+    "env": {
+        "commonjs": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "airbnb-base"
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "ignorePatterns": ["postcss.config.js", "tailwind.config.js"],
+    "rules": {
+        "no-unused-vars": ["error", { "argsIgnorePattern": "next" }],
+        "no-console": "off",
+        "no-underscore-dangle":"off"
+    }
+}
