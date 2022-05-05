@@ -530,14 +530,6 @@ html {
   display: none;
 }
 
-.grow-\[0\.75\] {
-  flex-grow: 0.75;
-}
-
-.grow-\[0\.5\] {
-  flex-grow: 0.5;
-}
-
 .grow-\[0\.25\] {
   flex-grow: 0.25;
 }
@@ -567,22 +559,8 @@ html {
   padding: 1rem;
 }
 
-.p-1 {
-  padding: 0.25rem;
-}
-
 .text-center {
   text-align: center;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
 }
 
 .text-lg {
@@ -613,21 +591,6 @@ html {
           text-decoration-line: underline;
 }
 
-.line-through {
-  -webkit-text-decoration-line: line-through;
-          text-decoration-line: line-through;
-}
-
-.decoration-d-cyan {
-  -webkit-text-decoration-color: #8be9fd;
-          text-decoration-color: #8be9fd;
-}
-
-.decoration-d-pink {
-  -webkit-text-decoration-color: #ff79c6;
-          text-decoration-color: #ff79c6;
-}
-
 .decoration-d-purple {
   -webkit-text-decoration-color: #bd93f9;
           text-decoration-color: #bd93f9;
@@ -639,19 +602,14 @@ html {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow {
-  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow-md {
-  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+body {
+  background-color: #282a36;
+  background-image: linear-gradient(#44475a 1px, transparent 1px),
+    linear-gradient(to right, #44475a 1px, #282a36 1px);
+  background-size: 20px 20px;
+}
 
 @media (min-width: 640px) {
   .sm\:flex-row {
@@ -662,19 +620,8 @@ html {
     align-items: center;
   }
 
-  .sm\:px-8 {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
   .sm\:px-16 {
     padding-left: 4rem;
     padding-right: 4rem;
-  }
-
-  .sm\:shadow {
-    --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-    --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 }

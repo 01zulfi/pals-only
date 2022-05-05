@@ -6,8 +6,8 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     link(rel='stylesheet', href='/stylesheets/style.css')
     title= title
-  body(class="bg-d-bg text-d-fg")
-    header(class="shadow-xl p-4 sm:px-16 flex flex-col sm:flex-row sm:items-center justify-between items-stretch gap-2 text-lg")
+  body(class="text-d-fg")
+    header(class="shadow-xl bg-d-bg p-4 sm:px-16 flex flex-col sm:flex-row sm:items-center justify-between items-stretch gap-2 text-lg")
       h1(class="text-3xl font-semibold text-center underline decoration-d-purple") Pals Only
       div(class="grow-[0.25]") 
         if currentUser
@@ -23,7 +23,7 @@ html(lang="en")
             p
             a(href="/users/logout" class="link") Logout
         else 
-          nav(class="")
+          nav(class="nav")
             a(href="/" class="link") Home
             p 
             a(href="/users/login" class="link") Login
