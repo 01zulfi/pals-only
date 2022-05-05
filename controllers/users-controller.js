@@ -81,8 +81,10 @@ exports.signupPost = [
 exports.loginGet = (req, res, next) => {
   if (req.user) return res.redirect('/');
   if (req.session.messages) {
+    const latestMessage = req.session.messages[req.session.messages.length - 1];
+    req.session.messages = [];
     return res.render('login-form', {
-      error: req.session.messages[req.session.messages.length - 1], // get latest message
+      error: latestMessage,
     });
   }
   return res.render('login-form');
