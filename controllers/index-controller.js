@@ -8,7 +8,7 @@ exports.getMessages = (req, res, next) => {
     .populate('author')
     .exec((err, result) => {
       if (err) return next(err);
-      return res.render('index', { messages: result });
+      return res.render('index', { messages: result, title: 'Pals Only' });
     });
 };
 

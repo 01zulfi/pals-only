@@ -37,7 +37,7 @@ passport.deserializeUser((id, done) => {
 
 exports.signupGet = (req, res, next) => {
   if (req.user) return res.redirect('/');
-  return res.render('signup-form');
+  return res.render('signup-form', { title: 'Sign Up | Pals Only' });
 };
 
 exports.signupPost = [
@@ -65,6 +65,7 @@ exports.signupPost = [
         return res.render('signup-form', {
           ...user,
           errors: errors.array(),
+          title: 'Sign Up | Pals Only',
         });
       }
 
@@ -85,9 +86,12 @@ exports.loginGet = (req, res, next) => {
     req.session.messages = [];
     return res.render('login-form', {
       error: latestMessage,
+      title: 'Login | Pals Only',
     });
   }
-  return res.render('login-form');
+  return res.render('login-form', {
+    title: 'Sign | Pals Only',
+  });
 };
 
 exports.loginPost = passport.authenticate('local', {
@@ -114,7 +118,9 @@ exports.userDetail = (req, res, next) => {
     (err, result) => {
       if (err) return next(err);
       return res.render('user-detail', {
-        title: `${result.user.username}`,
+        title: req.body.isMember
+          ? `${result.user.username} | Profile`
+          : 'Profile',
         user: result.user,
         userMessages: result.userMessages,
       });
