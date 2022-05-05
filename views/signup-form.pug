@@ -5,7 +5,7 @@ block content
     h2(class="heading text-center pt-3") Sign Up!
     form(action="" method="post" class="my-4 flex flex-col") 
       div(class="label-input")
-        label(for="username") Username:
+        label(for="username") Username: (required)
         input(type="text" class="input" name="username" id="username" required placeholder="Enter username here..." value=(username || ''))
       hr(class="my-2")
       div(class="label-input")
@@ -17,11 +17,11 @@ block content
         input(type="text" class="input" name="lastName" id="last-name" placeholder="Enter last name here..." value=(lastName || ''))
       hr(class="my-2")
       div(class="label-input")
-        label(for="password") Password:
+        label(for="password") Password: (required)
         input(type="password" class="input" name="password" id="password" required)
       hr(class="my-2")
       div(class="label-input")
-        label(for="confirm-password") Confirm Password:
+        label(for="confirm-password") Confirm Password: (required)
         input(type="password" id="confirm-password" class="input" required name="confirmPassword")
       if errors
         div 
