@@ -4,7 +4,7 @@ require('../models/user');
 
 exports.getMessages = (req, res, next) => {
   Message.find({})
-    .sort({ createdAt: 1 })
+    .sort({ createdAt: -1 })
     .populate('author')
     .exec((err, result) => {
       if (err) return next(err);
