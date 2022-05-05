@@ -118,7 +118,7 @@ exports.userDetail = (req, res, next) => {
     (err, result) => {
       if (err) return next(err);
       return res.render('user-detail', {
-        title: req.body.isMember
+        title: req.user.isMember
           ? `${result.user.username} | Profile`
           : 'Profile',
         user: result.user,
