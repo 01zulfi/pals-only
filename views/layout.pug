@@ -7,4 +7,21 @@ html(lang="en")
     link(rel='stylesheet', href='/stylesheets/style.css')
     title= title
   body 
+    h1 Pals Only
+    div 
+      if currentUser
+        h2 Welcome #{currentUser.username}
+        a(href="/new") New Message
+        p
+        a(href="/") Home
+        p
+        a(href=`/users/${currentUser.id}`) Profile
+        p
+        a(href="/users/logout") Logout
+      else 
+        a(href="/") Home
+        p 
+        a(href="/users/login") Login
+        p
+        a(href="/users/signup") Sign Up
     block content

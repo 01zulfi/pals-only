@@ -1,0 +1,23 @@
+extends layout 
+
+block content
+  h1 New Message
+  if currentUser
+    form(action="" method="post") 
+      div 
+        label(for="title") Title:
+        input(type="text" id="title" name="title" required placeholder="Enter message title here...")
+      div 
+        label(for="body") Body:
+        textarea(id="body" name="body" cols="30" rows="10" placeholder="Enter message body here...") 
+      if errors
+        div
+        each error in errors
+          p= error.msg
+      button(type="submit") Add Message
+  else 
+    h3 
+      a(href="/users/signup") Sign Up
+      |  or 
+      a(href="/users/login") Login
+      |  to create new messages
