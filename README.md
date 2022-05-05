@@ -1,5 +1,7 @@
 # Pals Only
 
+### [Pals Only Preview Link](https://pals-only.herokuapp.com/)
+
 ## About
 
 A message board application where users authenticate themselves via Passport.js. Authenticated users can post new messages. Users become members by entering a secret passcode in the [Member form](https://pals-only.herokuapp.com/users/member). Members can see the author of the message and view their profiles. If they wish, users can become admins by entering a secret passcode in the [Admin form](https://pals-only.herokuapp.com/users/admin). Admins can delete any message.
@@ -8,7 +10,7 @@ A message board application where users authenticate themselves via Passport.js.
 
   - Written in a NodeJS Framwork: [Express](https://expressjs.com/)
   - Employes a Model, View, Controller architecture 
-  - Authenticates users with [Passport.js](https://www.passportjs.org/)
+  - Authenticates users with [Passport.js](https://www.passportjs.org/)'s local strategy
   - Uses [Pug](https://pugjs.org/api/getting-started.html) as the templating engine
   - Styled via [Tailwind CSS](https://tailwindcss.com/)
 
