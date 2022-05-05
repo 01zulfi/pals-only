@@ -8,6 +8,8 @@ router.post('/signup', controller.signupPost);
 router.get('/login', controller.loginGet);
 router.post('/login', controller.loginPost);
 router.get('/logout', controller.logout);
+router.get('/member', controller.memberGet);
+router.post('/member', controller.memberPost);
 router.get('/:id', controller.userDetail);
 
 module.exports = router;

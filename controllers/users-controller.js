@@ -5,6 +5,7 @@ const async = require('async');
 const { body, validationResult } = require('express-validator');
 const User = require('../models/user');
 const Message = require('../models/message');
+const { MemberPass } = require('../utils/passcode-manager');
 
 passport.use(
   new LocalStrategy((username, password, done) => {
@@ -118,3 +119,33 @@ exports.userDetail = (req, res, next) => {
     },
   );
 };
+
+exports.memberGet = (req, res, next) => {
+  res.render('member-form', { title: 'Become a Member | Pals Only' });
+  return res.end();
+};
+
+exports.memberPost = [
+  body('passcode', 'Incorrect Passcode')
+    .trim()
+    .escape()
+    .custom((value) => MemberPass.check(value)),
+  (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.render('member-form', {
+        title: 'Become a Member | Pals Only',
+        errors: errors.array(),
+      });
+    }
+    return User.findByIdAndUpdate(
+      req.user._id,
+      { isMember: true },
+      {},
+      (err) => {
+        if (err) return next(err);
+        return res.redirect('/');
+      },
+    );
+  },
+];
