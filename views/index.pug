@@ -4,24 +4,27 @@ block content
   section 
     h1 Messages
     div 
-      each message in messages
-        h2= message.title
-        p= message.body
-        if currentUser
-          if currentUser.isMember || currentUser.isAdmin || currentUser._id.toString() === message.author._id.toString()
-            div
-              p
-                a(href=`/users/${message.author._id}`) #{message.author.username}
-              p= message.createdAt
+      if messages.length > 0
+        each message in messages
+          h2= message.title
+          p= message.body
+          if currentUser
+            if currentUser.isMember || currentUser.isAdmin || currentUser._id.toString() === message.author._id.toString()
+              div
+                p
+                  a(href=`/users/${message.author._id}`) #{message.author.username}
+                p= message.createdAt
+            else 
+              p Become a member to view who posted this message
           else 
-            p Become a member to view who posted this message
-        else 
-          p 
-            a(href="/users/signup") Sign Up 
-            | or  
-            a(href="/users/login") Login
-            | to view who posted this message
-        if currentUser && currentUser.isAdmin
-          form(action="/delete", method="post") 
-            input(type="hidden" name="messageId" value=message._id)
-            button(type="submit") Delete
+            p 
+              a(href="/users/signup") Sign Up 
+              | or  
+              a(href="/users/login") Login
+              | to view who posted this message
+          if currentUser && (currentUser.isAdmin || currentUser._id.toString() === message.author._id.toString())
+            form(action="/delete", method="post") 
+              input(type="hidden" name="messageId" value=message._id)
+              button(type="submit") Delete
+      else 
+        h3 No messages yet :(

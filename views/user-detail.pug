@@ -11,6 +11,11 @@ block content
           each message in userMessages
             h4= message.title
             p= message.body
+            p= message.createdAt
+            if currentUser && (currentUser.isAdmin || currentUser._id.toString() === message.author._id.toString())
+              form(action="/delete", method="post") 
+                input(type="hidden" name="messageId" value=message._id)
+                button(type="submit") Delete
       else 
         div 
           if currentUser
