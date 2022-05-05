@@ -2,5 +2,5 @@ const PasscodeManager = (passcode) => ({
   check: (inputPasscode) => passcode === inputPasscode,
 });
 
-exports.MemberPass = PasscodeManager('members rule');
-exports.AdminPass = PasscodeManager('admins rage');
+exports.MemberPass = PasscodeManager('sea rule');
+exports.AdminPass = PasscodeManager('sky rage');
