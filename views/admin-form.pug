@@ -1,28 +1,30 @@
 extends layout 
 
 block content 
-  h1 Become an Admin
-  if currentUser
-    if currentUser.isMember
-      if currentUser.isAdmin
-        h2 You already are an admin at Pals Only!
-      else
-        form(action="", method="post") 
-          div 
-            label(for="member-passcode") Enter secret pass:
-            input(type="text" name="passcode" placeholder="Enter secret pass here..." required)
-          if errors
-            div
-            each error in errors
-              p= error.msg
-          button(type="submit") Submit
-    else 
-      h3 You must be a member before becoming an admin.
-      a(href="/users/member") Become a Member
-  else 
-    p
-      a(href="/users/signup") Sign Up
-      |  or 
-      a(href="/users/login") Login
-      |  to get access to member form.
+  section(class="flex items-center flex-col mx-4 my-4 w-full bg-d-cl shadow-2xl rounded sm:w-3/5")
+    h2(class="heading pt-3") Become an Admin
+    if currentUser
+      if currentUser.isMember
+        if currentUser.isAdmin
+          p(class="p-5") You already are an admin at Pals Only!
+        else
+          form(action="", method="post" class="my-4 flex flex-col items-center") 
+            div(class="label-input") 
+              label(for="member-passcode") Enter secret pass:
+              input(type="text" class="input" name="passcode" placeholder="Enter secret pass here..." required)
+            if errors
+              div(class="rounded border border-d-red my-4 p-3 w-full")
+                each error in errors
+                  p(class="text-center")= error.msg
+              a(href="https://github.com/01zulfi/pals-only" class="link") hint
+            button(type="submit" class="button my-3") Submit
 
+      else 
+        h3(class="pt-3") You must be a member before becoming an admin.
+        a(href="/users/member" class="link-2 my-4") Become a Member
+    else 
+      p(class="p-5")
+        a(href="/users/signup" class="link") Sign Up
+        |  or 
+        a(href="/users/login" class="link") Login
+        |  to get access to admin form.
