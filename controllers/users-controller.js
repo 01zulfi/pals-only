@@ -5,7 +5,7 @@ const async = require('async');
 const { body, validationResult } = require('express-validator');
 const User = require('../models/user');
 const Message = require('../models/message');
-const { MemberPass } = require('../utils/passcode-manager');
+const { MemberPass, AdminPass } = require('../utils/passcode-manager');
 
 passport.use(
   new LocalStrategy((username, password, done) => {
@@ -141,6 +141,36 @@ exports.memberPost = [
     return User.findByIdAndUpdate(
       req.user._id,
       { isMember: true },
+      {},
+      (err) => {
+        if (err) return next(err);
+        return res.redirect('/');
+      },
+    );
+  },
+];
+
+exports.adminGet = (req, res, next) => {
+  res.render('admin-form', { title: 'Become an Admin | Pals Only' });
+  return res.end();
+};
+
+exports.adminPost = [
+  body('passcode', 'Incorrect Passcode')
+    .trim()
+    .escape()
+    .custom((value) => AdminPass.check(value)),
+  (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.render('admin-form', {
+        title: 'Become an Admin  | Pals Only',
+        errors: errors.array(),
+      });
+    }
+    return User.findByIdAndUpdate(
+      req.user._id,
+      { isAdmin: true },
       {},
       (err) => {
         if (err) return next(err);

@@ -10,6 +10,8 @@ router.post('/login', controller.loginPost);
 router.get('/logout', controller.logout);
 router.get('/member', controller.memberGet);
 router.post('/member', controller.memberPost);
+router.get('/admin', controller.adminGet);
+router.post('/admin', controller.adminPost);
 router.get('/:id', controller.userDetail);
 
 module.exports = router;
