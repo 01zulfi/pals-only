@@ -6,27 +6,27 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     link(rel='stylesheet', href='/stylesheets/style.css')
     title= title
-  body 
-    h1 Pals Only
-    div 
-      if currentUser
-        h2 Welcome #{currentUser.username}
-        if !currentUser.isMember
-          a(href="/users/member") Become a Member
-        if currentUser.isMember && !currentUser.isAdmin
-          a(href="/users/admin") Become an Admin
-        p
-        a(href="/new") New Message
-        p
-        a(href="/") Home
-        p
-        a(href=`/users/${currentUser.id}`) Profile
-        p
-        a(href="/users/logout") Logout
-      else 
-        a(href="/") Home
-        p 
-        a(href="/users/login") Login
-        p
-        a(href="/users/signup") Sign Up
+  body(class="bg-d-bg text-d-fg")
+    header(class="shadow-xl p-4 sm:px-16 flex flex-col sm:flex-row sm:items-center justify-between items-stretch gap-2 text-lg")
+      h1(class="text-3xl font-semibold text-center underline decoration-d-purple") Pals Only
+      div(class="grow-[0.25]") 
+        if currentUser
+          nav(class="nav") 
+            if !currentUser.isMember
+              a(href="/users/member" class="link-2 font-medium") Become a Member
+            if currentUser.isMember && !currentUser.isAdmin
+              a(href="/users/admin" class="link-2 font-medium") Become an Admin
+            p
+            a(href="/" class="link") Home
+            p
+            a(href=`/users/${currentUser.id}` class="link") Profile
+            p
+            a(href="/users/logout" class="link") Logout
+        else 
+          nav(class="")
+            a(href="/" class="link") Home
+            p 
+            a(href="/users/login" class="link") Login
+            p
+            a(href="/users/signup" class="link") Sign Up
     block content

@@ -9,3 +9,15 @@
     font-family: 'Abril Fatface', sans-serif;
   }
 }
+
+@layer components {
+  .nav {
+    @apply flex justify-around;
+  }
+  .link {
+    @apply text-d-purple hover:bg-d-comment underline hover:no-underline hover:text-d-fg rounded p-[0.2rem];
+  }
+  .link-2 {
+    @apply link text-d-pink;
+  }
+}
