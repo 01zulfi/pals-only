@@ -7,6 +7,7 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
+const MongoStore = require('connect-mongo');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -29,6 +30,11 @@ app.use(
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
+    store: MongoStore.create({
+      mongoUrl: process.env.MONGODB_URL,
+      ttl: 2592000000, // 30 days
+    }),
+    cookie: { maxAge: 2592000000 }, // 30 days in ms
   }),
 );
 app.use(passport.initialize());
