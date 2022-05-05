@@ -20,6 +20,15 @@
   .link-2 {
     @apply link text-d-pink;
   }
+  .button {
+    @apply p-2 bg-d-green hover:outline shadow-md hover:opacity-90 rounded text-d-bg;
+  }
+  .button-red {
+    @apply button bg-d-red;
+  }
+  .heading {
+    @apply font-semibold text-d-fg text-3xl underline decoration-d-purple;
+  }
 }
 
 body {

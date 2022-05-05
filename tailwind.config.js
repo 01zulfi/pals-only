@@ -12,7 +12,7 @@ module.exports = {
         'd-orange': '#ffb86c',
         'd-pink': '#ff79c6',
         'd-purple': '#bd93f9',
-        'd-Red': '#ff5555',
+        'd-red': '#ff5555',
         'd-yellow': '#f1fa8c',
       },
     },

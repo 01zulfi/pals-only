@@ -6,9 +6,10 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     link(rel='stylesheet', href='/stylesheets/style.css')
     title= title
-  body(class="text-d-fg")
-    header(class="shadow-xl bg-d-bg p-4 sm:px-16 flex flex-col sm:flex-row sm:items-center justify-between items-stretch gap-2 text-lg")
-      h1(class="text-3xl font-semibold text-center underline decoration-d-purple") Pals Only
+  body(class="text-d-fg flex flex-col items-center")
+    header(class="shadow-xl bg-d-bg p-4 sm:px-16 flex flex-col sm:flex-row sm:items-center justify-between items-stretch gap-2 text-lg w-full")
+      h1(class="text-3xl font-semibold text-center underline decoration-d-purple") 
+        a(href="/")  Pals Only
       div(class="grow-[0.25]") 
         if currentUser
           nav(class="nav") 
