@@ -69,11 +69,21 @@ exports.signupPost = [
         });
       }
 
-      return user.save((error) => {
-        if (error) {
-          return next(error);
+      return User.find({ username: user.username }).exec((er, result) => {
+        if (er) return next(er);
+        if (result.length > 0) {
+          return res.render('signup-form', {
+            ...user,
+            errors: [{ msg: 'Username already exists' }],
+            title: 'Sign Up | Pals Only',
+          });
         }
-        return res.redirect('/');
+        return user.save((error) => {
+          if (error) {
+            return next(error);
+          }
+          return res.redirect('/users/login');
+        });
       });
     });
   },
