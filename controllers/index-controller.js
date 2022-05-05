@@ -39,3 +39,10 @@ exports.createMessagePost = [
     });
   },
 ];
+
+exports.deleteMessage = (req, res, next) =>
+  /* eslint-disable implicit-arrow-linebreak */
+  Message.findByIdAndRemove(req.body.messageId, (err) => {
+    if (err) return next(err);
+    return res.redirect(req.headers.referer);
+  });
