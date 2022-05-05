@@ -1,0 +1,28 @@
+extends layout 
+
+block content 
+  h1 Become an Admin
+  if currentUser
+    if currentUser.isMember
+      if currentUser.isAdmin
+        h2 You already are an admin at Pals Only!
+      else
+        form(action="", method="post") 
+          div 
+            label(for="member-passcode") Enter secret pass:
+            input(type="text" name="passcode" placeholder="Enter secret pass here..." required)
+          if errors
+            div
+            each error in errors
+              p= error.msg
+          button(type="submit") Submit
+    else 
+      h3 You must be a member before becoming an admin.
+      a(href="/users/member") Become a Member
+  else 
+    p
+      a(href="/users/signup") Sign Up
+      |  or 
+      a(href="/users/login") Login
+      |  to get access to member form.
+
