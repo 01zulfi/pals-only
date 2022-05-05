@@ -11,6 +11,11 @@ html(lang="en")
     div 
       if currentUser
         h2 Welcome #{currentUser.username}
+        if !currentUser.isMember
+          a(href="/users/member") Become a Member
+        if currentUser.isMember && !currentUser.isAdmin
+          a(href="/users/admin") Become an Admin
+        p
         a(href="/new") New Message
         p
         a(href="/") Home
