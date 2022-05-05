@@ -1,15 +1,17 @@
 extends layout 
 
 block content 
-  h1 Login 
-  form(action="", method="post") 
-    div 
-      label(for="username") Username:
-      input(type="text" name="username" id="username" autocomplete="username" placeholder="Enter username here..." required)
-    div 
-      label(for="current-password") Password:
-      input(type="password" autocomplete="current-password" name="password" id="current-password" require)
-    if error
-      div 
-          p= error
-    button(type="submit") Login
+  section(class="flex items-center flex-col mx-4 my-4 w-full bg-d-cl shadow-2xl rounded sm:w-3/5")
+    h2(class="heading text-center pt-3") Login
+    form(action="", method="post" class="my-4 flex flex-col") 
+      div(class="label-input") 
+        label(for="username") Username:
+        input(type="text" class="input" name="username" id="username" autocomplete="username" placeholder="Enter username here..." required)
+      hr(class="my-3")
+      div(class="label-input") 
+        label(for="current-password") Password:
+        input(type="password" class="input" autocomplete="current-password" name="password" id="current-password" require)
+      if error
+        div(class="border border-d-red my-4 p-2 rounded") 
+            p(class="text-center font-semibold")= error
+      button(type="submit" class="button my-4") Login

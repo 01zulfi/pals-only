@@ -1,25 +1,30 @@
 extends layout 
 
 block content 
-  h1 Sign Up!
-  form(action="", method="post") 
-    div   
-      label(for="username") Username:
-      input(type="text" name="username" id="username" required placeholder="Enter username here..." value=(username || ''))
-    div   
-      label(for="first-name") First Name:
-      input(type="text" name="firstName" id="first-name" placeholder="Enter first name here..." value=(firstName || ''))
-    div   
-      label(for="last-name") Last Name:
-      input(type="text" name="lastName" id="last-name" placeholder="Enter last name here..." value=(lastName || ''))
-    div 
-      label(for="password") Password:
-      input(type="password" name="password" id="password" required)
-    div 
-      label(for="confirm-password") Confirm Password:
-      input(type="password" id="confirm-password" required name="confirmPassword")
-    if errors
-      div
-       each error in errors
-        p= error.msg
-    button(type="submit") Submit 
+  section(class="flex items-center flex-col mx-4 my-4 w-full bg-d-cl shadow-2xl rounded sm:w-3/5")
+    h2(class="heading text-center pt-3") Sign Up!
+    form(action="" method="post" class="my-4 flex flex-col") 
+      div(class="label-input")
+        label(for="username") Username:
+        input(type="text" class="input" name="username" id="username" required placeholder="Enter username here..." value=(username || ''))
+      hr(class="my-2")
+      div(class="label-input")
+        label(for="first-name") First Name:
+        input(class="input" type="text" name="firstName" id="first-name" placeholder="Enter first name here..." value=(firstName || ''))
+      hr(class="my-2")
+      div(class="label-input")
+        label(for="last-name") Last Name:
+        input(type="text" class="input" name="lastName" id="last-name" placeholder="Enter last name here..." value=(lastName || ''))
+      hr(class="my-2")
+      div(class="label-input")
+        label(for="password") Password:
+        input(type="password" class="input" name="password" id="password" required)
+      hr(class="my-2")
+      div(class="label-input")
+        label(for="confirm-password") Confirm Password:
+        input(type="password" id="confirm-password" class="input" required name="confirmPassword")
+      if errors
+        div 
+          each error in errors
+           p(class="border border-d-red my-4 p-2 rounded text-center font-semibold")= error.msg
+      button(type="submit" class="button my-4") Submit 

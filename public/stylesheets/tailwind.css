@@ -29,6 +29,12 @@
   .heading {
     @apply font-semibold text-d-fg text-3xl underline decoration-d-purple;
   }
+  .label-input {
+    @apply flex justify-between items-center;
+  }
+  .input {
+    @apply bg-d-comment rounded p-[0.25rem] text-white;
+  }
 }
 
 body {
