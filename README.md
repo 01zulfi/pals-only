@@ -1,6 +1,6 @@
 # Pals Only
 
-### [Pals Only Preview Link](https://pals-only.herokuapp.com/)
+### [Pals Only Preview Link](https://pals-only.cyclic.app/)
 
 ## About
 
@@ -28,7 +28,7 @@ npm install
 4. Create a `.env` file with the following:
 ```
 MONGODB_URL="your mongodb connection url here"
-SESSION="any random long string here"
+SECRET="any random long string here"
 ```
 5. Start the server:
 ```bash
