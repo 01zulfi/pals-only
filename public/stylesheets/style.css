@@ -584,6 +584,11 @@ html {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -599,11 +604,6 @@ html {
   margin-bottom: 0.5rem;
 }
 
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -613,12 +613,12 @@ html {
   margin-bottom: 1rem;
 }
 
-.mb-10 {
-  margin-bottom: 2.5rem;
-}
-
 .mt-4 {
   margin-top: 1rem;
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem;
 }
 
 .block {
@@ -677,14 +677,14 @@ html {
   border-left-width: 0.7rem;
 }
 
-.border-d-comment {
-  --tw-border-opacity: 1;
-  border-color: rgb(98 114 164 / var(--tw-border-opacity));
-}
-
 .border-d-red {
   --tw-border-opacity: 1;
   border-color: rgb(255 85 85 / var(--tw-border-opacity));
+}
+
+.border-d-comment {
+  --tw-border-opacity: 1;
+  border-color: rgb(98 114 164 / var(--tw-border-opacity));
 }
 
 .bg-d-cl {
@@ -697,32 +697,20 @@ html {
   background-color: rgb(40 42 54 / var(--tw-bg-opacity));
 }
 
-.bg-transparent {
-  background-color: transparent;
-}
-
-.bg-\[rgba\(255\2c 255\2c 255\2c 0\.1\)\] {
-  background-color: rgba(255,255,255,0.1);
-}
-
-.bg-\[rgba\(255\2c 255\2c 255\2c 0\.8\)\] {
-  background-color: rgba(255,255,255,0.8);
-}
-
-.p-2 {
-  padding: 0.5rem;
+.p-5 {
+  padding: 1.25rem;
 }
 
 .p-3 {
   padding: 0.75rem;
 }
 
-.p-4 {
-  padding: 1rem;
+.p-2 {
+  padding: 0.5rem;
 }
 
-.p-5 {
-  padding: 1.25rem;
+.p-4 {
+  padding: 1rem;
 }
 
 .py-2 {
@@ -735,12 +723,12 @@ html {
   padding-right: 0.5rem;
 }
 
-.pl-2 {
-  padding-left: 0.5rem;
-}
-
 .pt-3 {
   padding-top: 0.75rem;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
 }
 
 .text-center {
@@ -799,6 +787,12 @@ html {
           text-decoration-color: #bd93f9;
 }
 
+.shadow-2xl {
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .shadow-md {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
@@ -809,29 +803,6 @@ html {
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow-2xl {
-  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.backdrop-blur {
-  --tw-backdrop-blur: blur(8px);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-}
-
-.backdrop-blur-xl {
-  --tw-backdrop-blur: blur(24px);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-}
-
-.backdrop-filter {
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
